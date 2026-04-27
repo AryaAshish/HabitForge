@@ -1,22 +1,117 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# HabitForge — Production-Grade Habit Tracking App
 
-# Getting Started
+**Build habits. Stay accountable. Together.**
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Quick Start
 
-## Step 1: Start Metro
+### Prerequisites
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- Node.js 22.11.0+
+- Android SDK / iOS SDK
+- Xcode (for iOS) or Android Studio (for Android)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### Installation
 
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+```bash
+npm install --legacy-peer-deps
 ```
+
+### Running on Android
+
+```bash
+npx react-native run-android
+```
+
+### Running on iOS
+
+```bash
+npx react-native run-ios
+```
+
+## Project Structure
+
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for detailed folder structure and design decisions.
+
+## Tech Stack
+
+- **Mobile**: React Native 0.74+ (Bare workflow)
+- **Language**: TypeScript (strict mode)
+- **Navigation**: React Navigation v6
+- **State Management**: Zustand
+- **Server State**: TanStack Query
+- **Backend**: Supabase
+- **AI**: Anthropic Claude API
+- **Notifications**: Notifee
+- **Payments**: RevenueCat
+- **Analytics**: PostHog
+
+## Environment Setup
+
+1. Copy `.env.example` to `.env` and fill in your credentials:
+
+```bash
+cp .env.example .env
+```
+
+2. Required environment variables:
+   - `SUPABASE_URL`
+   - `SUPABASE_ANON_KEY`
+   - `ANTHROPIC_API_KEY`
+   - `REVENUECAT_ANDROID_KEY`
+   - `REVENUECAT_IOS_KEY`
+   - `POSTHOG_API_KEY`
+   - `POSTHOG_HOST`
+
+## Supabase Setup
+
+Run the SQL migrations from `supabase-schema.sql` in your Supabase SQL Editor:
+
+1. Go to Supabase Dashboard → SQL Editor
+2. Create new query
+3. Paste contents of `supabase-schema.sql`
+4. Run query
+
+## Development
+
+### Linting
+
+```bash
+npm run lint
+```
+
+### Testing
+
+```bash
+npm test
+```
+
+## Contribution Guidelines
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for code standards, git workflow, and PR process.
+
+## Documentation
+
+- [ARCHITECTURE.md](./ARCHITECTURE.md) — Project structure, design decisions
+- [CONTRIBUTING.md](./CONTRIBUTING.md) — Code standards, git rules
+- [SCHEMA.md](./SCHEMA.md) — Database schema, RLS explanation
+- [FEATURES.md](./FEATURES.md) — Feature list, freemium gates, roadmap
+- [AI_NUDGES.md](./AI_NUDGES.md) — Claude API integration, trigger logic
+
+## Monetization
+
+**Freemium Model:**
+
+- Free tier: Up to 5 habits, 7-day history
+- Pro tier: Unlimited habits, full history, AI nudges, social features, streak recovery
+
+**Pricing:**
+
+- ₹199/month | $2.99/month
+- ₹1999 lifetime | $24.99 lifetime
+
+## License
+
+Proprietary — HabitForge
 
 ## Step 2: Build and run your app
 
